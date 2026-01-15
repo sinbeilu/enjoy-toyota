@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>你的「職場疲勞守護神」是哪一隻？</title>
+    <title>你的「職場疲勞神獸」是哪一隻？</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
 
@@ -40,12 +40,11 @@
             overflow: hidden;
         }
 
-        /* --- Intro & Result --- */
         .intro h1, .result-page h1 {
             font-size: 26px;
             text-align: center;
             color: var(--primary-color);
-            font-weight: 700; /* 統一字體，使用字重區分 */
+            font-weight: 700;
         }
         .intro p {
             font-size: 16px;
@@ -54,7 +53,6 @@
             margin: 16px 0 24px;
         }
 
-        /* --- Question --- */
         .question-block {
             display: none;
             animation: fadeIn 0.5s;
@@ -90,7 +88,6 @@
             box-shadow: 0 4px 10px rgba(0, 121, 107, 0.1);
         }
 
-        /* --- Buttons --- */
         .navigation-btn {
             background-color: var(--primary-color);
             color: white;
@@ -109,7 +106,6 @@
             transform: translateY(-2px);
         }
 
-        /* --- Result Page --- */
         .result-page { display: none; text-align: center; animation: fadeIn 0.5s; }
         .result-page .emoji {
             font-size: 180px;
@@ -121,7 +117,7 @@
             font-size: 34px;
             color: var(--primary-color);
             margin-bottom: 8px;
-            font-weight: 700; /* 統一字體，使用字重區分 */
+            font-weight: 700;
         }
         .result-page h3 {
             font-size: 20px;
@@ -136,7 +132,6 @@
             max-width: 480px;
             margin: 0 auto 24px;
         }
-        /* Style for the new promotional text */
         .promo-text {
             font-size: 15px;
             font-weight: 500;
@@ -150,7 +145,6 @@
             line-height: 1.6;
         }
 
-        /* --- Progress Bar --- */
         .progress-bar {
             width: 100%;
             background-color: #efefef;
@@ -166,7 +160,6 @@
             transition: width 0.4s ease-in-out;
         }
         
-        /* --- Modal (Pop-up) --- */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -193,7 +186,7 @@
         .modal-content h3 {
             color: var(--primary-color);
             margin-top: 0;
-            font-weight: 700; /* 統一字體，使用字重區分 */
+            font-weight: 700;
         }
         .modal-content .solution { margin-bottom: 20px; }
         .modal-content .solution h4 { margin-bottom: 5px; font-weight: 700; }
@@ -217,8 +210,8 @@
         
         <div id="intro-section">
             <div class="intro">
-                <h1>你的「職場疲勞守護神」是哪一隻？</h1>
-                <p>各位TOYOTA的夥伴們！<br>每天為工作打拼的你，是不是偶爾也覺得「電量不足」呢？🔋<br>疲勞，其實有許多不同的面貌。<br>快來找出你的疲勞類型，並獲得專屬於你的「元氣恢復指南」！</p>
+                <h1>你的「職場疲勞神獸」是哪一隻？</h1>
+                <p>每天為工作打拼的你，是不是偶爾也覺得「電量不足」呢？🔋<br>疲勞，其實有許多不同的面貌。快來玩這個我們精心設計的趣味小測驗，精準找出你的疲勞類型，並獲得專屬於你的「元氣恢復指南」！</p>
                 <button class="navigation-btn" id="start-btn">開始測驗</button>
             </div>
         </div>
@@ -250,35 +243,36 @@
 
 
     <script>
+        // UPDATED QUESTIONS (Q1-Q3)
         const quizData = [
             {
-                question: "Q1. 辛苦了一天，你下班後最想做的事情是？",
+                question: "Q1. 對你而言，疲勞的「第一個訊號」通常是？",
                 options: {
-                    A: "找人按摩或泡個熱水澡，舒緩筋骨。",
-                    B: "癱在沙發上，一根手指都不想動。",
-                    C: "什麼都不想，只想無腦追劇或滑廢片。",
-                    D: "戴上耳機，誰都不要跟我說話。"
+                    A: "搬完一批貨或站了一整天後，雙腿感覺像灌了鉛一樣沉重。",
+                    B: "盯著螢幕幾小時後，眼睛開始模糊，肩頸像石頭一樣硬。",
+                    C: "連續開會或處理完複雜報告後，腦袋一片空白，反應變慢。",
+                    D: "明明沒做什麼事，但跟很多人溝通過後，感覺精力被吸乾，只想安靜。"
                 }
             },
             {
-                question: "Q2. 工作時，你最常脫口而出的OS是？",
+                question: "Q2. 接近下班時，一位同事跑來拜託你「幫個小忙」，你內心的第一個念頭是？",
                 options: {
-                    A: "「可以不要再問了嗎…（但臉上保持微笑）」",
-                    B: "「我剛剛…要幹嘛來著？」",
-                    C: "「力氣好像快用完了…」",
-                    D: "「我的眼睛好花、脖子也好僵…」"
+                    A: "「希望這不是什麼需要搬東西或跑腿的體力活，我快沒力了。」",
+                    B: "「只要我不用離開座位，動動滑鼠鍵盤就能解決，那就沒問題。」",
+                    C: "「希望這不是需要動腦的複雜問題，我的CPU已經過熱了。」",
+                    D: "「拜託千萬不要是需要溝通協調的請求，我今天不想再說話了。」"
                 }
             },
             {
-                question: "Q3. 仔細回想，工作日的午餐你通常是？",
+                question: "Q3. 如果辦公室有個魔法「一鍵恢復」按鈕，你最希望它的功能是？",
                 options: {
-                    A: "沒什麼胃口，或只想趕快吃完結束。",
-                    B: "買回來坐在位子上一邊配電腦一邊吃。",
-                    C: "趁機大吃一頓，用美食療癒自己。",
-                    D: "跟同事一起吃，順便抱怨一下工作。"
+                    A: "按下去，立刻讓全身痠痛的肌肉完全放鬆。",
+                    B: "按下去，瞬間治好我僵硬的肩頸和乾澀的眼睛。",
+                    C: "按下去，把大腦裡所有混亂的思緒和待辦事項都清空。",
+                    D: "按下去，能為我創造一個暫時不需回應任何人的安靜結界。"
                 }
             },
-            {
+            { // Q4-Q6 remain the same
                 question: "Q4. 如果現在能立刻擁有一項超能力，你會選？",
                 options: {
                     A: "身體金剛不壞之身，怎麼動都不累。",
@@ -306,14 +300,15 @@
                 }
             }
         ];
-
+        
+        // UPDATED SCORING MAP (Q1-Q3 now have direct mapping)
         const scoringMap = {
-            0: { A: 'a', B: 'b', C: 'c', D: 'd' }, // Q1
-            1: { A: 'd', B: 'c', C: 'a', D: 'b' }, // Q2
-            2: { A: 'd', B: 'b', C: 'a', D: 'c' }, // Q3
-            3: { A: 'a', B: 'b', C: 'd', D: 'c' }, // Q4
-            4: { A: 'b', B: 'd', C: 'c', D: 'a' }, // Q5
-            5: { A: 'a', B: 'b', C: 'd', D: 'c' }  // Q6
+            0: { A: 'a', B: 'b', C: 'c', D: 'd' }, // Q1 new
+            1: { A: 'a', B: 'b', C: 'c', D: 'd' }, // Q2 new
+            2: { A: 'a', B: 'b', C: 'c', D: 'd' }, // Q3 new
+            3: { A: 'a', B: 'b', C: 'd', D: 'c' }, // Q4 original
+            4: { A: 'b', B: 'd', C: 'c', D: 'a' }, // Q5 original
+            5: { A: 'a', B: 'b', C: 'd', D: 'c' }  // Q6 original
         };
 
         const resultsData = {
@@ -387,7 +382,7 @@
                 for (const key in q.options) {
                     html += `<div class="option">
                                 <input type="radio" id="q${index}${key}" name="q${index}" value="${key}">
-                                <label for="q${index}${key}">${key}. ${q.options[key]}</label>
+                                <label for="q${index}${key}">${q.options[key]}</label>
                              </div>`;
                 }
                 html += `</div>`;
@@ -452,8 +447,8 @@
                 <h2>${result.title}</h2>
                 <h3>${result.subtitle}</h3>
                 <p>${result.description}</p>
-                <p class="promo-text">快到 樂T 快樂生活季刊2026春季號 看看更多舒緩秘方吧！</p>
-                <button class="navigation-btn" id="show-guide-btn">查看${result.title.substring(2, result.title.length-1)}】的專屬舒緩指南</button>
+                <p class="promo-text">專屬於你的緩解秘方就在樂T 快樂生活季刊2026春季號</p>
+                <button class="navigation-btn" id="show-guide-btn">查看【${result.title.substring(2, result.title.length-1)}】的專屬舒緩指南</button>
             `;
 
             quizSection.style.display = 'none';
@@ -490,4 +485,3 @@
 
 </body>
 </html>
-

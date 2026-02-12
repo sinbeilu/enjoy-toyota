@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>你的「職場疲勞守護神」是哪一隻？</title>
+    <title>你的「職場疲勞守護神獸」是哪一隻？</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
 
@@ -210,7 +210,7 @@
         
         <div id="intro-section">
             <div class="intro">
-                <h1>你的「職場疲勞守護神」是哪一隻？</h1>
+                <h1>你的「職場疲勞守護神獸」是哪一隻？</h1>
                 <p>每天為工作打拼的你，是不是偶爾也覺得「電量不足」呢？🔋<br>疲勞，其實有許多不同的面貌。快來玩這個我們精心設計的趣味小測驗，精準找出你的疲勞類型，並獲得專屬於你的「元氣恢復指南」！</p>
                 <button class="navigation-btn" id="start-btn">開始測驗</button>
             </div>
@@ -332,28 +332,28 @@
 
         const guidesData = {
             a: {
-                title: "【負重水牛】的專屬舒緩指南",
+                title: "負重水牛的專屬舒緩指南",
                 solutions: [
                     { title: "解方1：事前暖身，事後伸展", text: "在開始大量勞動前，先做些簡單的關節活動；工作結束後，更要針對主要使用的肌群（如手臂、腰背、腿部）進行靜態伸展。" },
                     { title: "解方2：核心發力是關鍵", text: "無論搬重物或推車，記得先收緊腹部，想像用肚子的力量去帶動，而非單靠腰力或臂力。這能有效保護你的腰椎。" }
                 ]
             },
             b: {
-                title: "【定格無尾熊】的專屬舒緩指南",
+                title: "定格無尾熊的專屬舒緩指南",
                 solutions: [
                     { title: "解方1：番茄鐘起身法", text: "設定一個45-50分鐘的計時器，時間一到就強制自己離開座位，哪怕只是去裝杯水、上個廁所，都能有效打斷身體的「石化」過程。" },
                     { title: "解方2：辦公桌邊微伸展", text: "利用空檔，做些簡單的伸展。例如：雙手在背後交握，擴展胸膛；輕輕轉動頭部，放鬆肩頸；看看遠方，舒緩眼壓。" }
                 ]
             },
             c: {
-                title: "【燒腦貓頭鷹】的專屬舒緩指南",
+                title: "燒腦貓頭鷹的專屬舒緩指南",
                 solutions: [
                     { title: "解方1：每日「大腦清單術」", text: "在下班前或睡前，將腦中所有待辦事項、煩惱都寫在紙上。這個「寫下來」的動作，能有效釋放你的大腦記憶體，讓它不再擔心遺忘。" },
                     { title: "解方2：練習三分鐘「正念呼吸」", text: "當感到心煩意亂時，暫停手邊工作。專注在自己的一呼一吸上，感受空氣的進出。只要短短幾分鐘，就能幫助紛亂的思緒沉澱下來。" }
                 ]
             },
             d: {
-                title: "【營業笑臉柴犬】的專屬舒緩指南",
+                title: "營業笑臉柴犬的專屬舒緩指南",
                 solutions: [
                     { title: "解方1：創造「下班儀式感」", text: "每天下班時，做一件能明確切換「工作/生活」模式的事。例如：換上舒適的便服、聽一首自己最愛的歌、或是快走10分鐘。" },
                     { title: "解方2：設定一個「情緒垃圾桶」", text: "找一個信賴的朋友、家人，或準備一本筆記本，將工作上遇到的不愉快或委屈，定期地「倒出來」。" }
@@ -448,7 +448,7 @@
                 <h3>${result.subtitle}</h3>
                 <p>${result.description}</p>
                 <p class="promo-text">專屬於你的緩解秘方就在樂T 快樂生活季刊2026春季號</p>
-                <button class="navigation-btn" id="show-guide-btn">查看 ${result.title.substring(2, result.title.length-1)}】的專屬指南</button>
+                <button class="navigation-btn" id="show-guide-btn">查看${result.title.substring(2, result.title.length-1)}的專屬指南</button>
             `;
 
             quizSection.style.display = 'none';
@@ -485,6 +485,7 @@
 
 </body>
 </html>
+
 
 
 
